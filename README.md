@@ -72,5 +72,5 @@ Copyright is licensed under a [Open Source Initiative - BSD License][] license.
 
 	
 [Oroni Brian]: https://github.com/oronibrian
-[Github]: https://github.com/oronibrian
+[Github]: https://github.com/oronibrian/django-mpesa.git
 [Open Source Initiative - BSD License]: http://opensource.org/licenses/bsd-license.php
