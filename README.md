@@ -9,7 +9,7 @@ This is a safaricom (Daraja) wrapper
 
 ![alt text][logo]
 
-[logo]: https://developer.safaricom.co.ke/sites/all/themes/apigee_responsive_custom/logo.png "Logo Title Text 2"
+[logo]: https://developer.safaricom.co.ke/sites/all/themes/apigee_responsive_custom/logo.png "Daraja"
 
 For Django 
 
@@ -46,10 +46,16 @@ Add 'rest_framework' and 'mpesaApp' to your INSTALLED_APPS setting.
 
 
 
+## Creating Migrations
+With the app installed, the first thing you need to do is create a migration for it. You can do this with the following command:
 
+```python
+python3 manage.py makemigrations mpesaApp
 
+python3 manage.py migrate mpesaApp
 
-
+```
+Go to the admin panel and fill all the details from daraja sandbox or live details.
 
 
 
