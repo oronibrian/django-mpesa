@@ -1,6 +1,7 @@
 LICENSE.md
 MANIFEST.in
 README.rst
+setup.cfg
 setup.py
 DjangoMpesa/__init__.py
 DjangoMpesa/settings.py
