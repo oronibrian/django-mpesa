@@ -29,9 +29,8 @@ The following are the instruction for theusage of the app.
 Install the following libraries using pip install 
 
 
-```pip install -r requirements.txt
+pip install -r requirements.txt
 
-```
 Add 'rest_framework' and 'mpesaApp' to your INSTALLED_APPS setting.
 
 
