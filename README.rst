@@ -1,13 +1,13 @@
 ============
-Django mpesa
+DjangoMpesa
 ============
 
-Django mpesa is a simple re-usable  of Django's application for mpesa STK push payment, that can be easily intergrated to any django powered site.
+Django mpesa is a simple re-usable Django application for mpesa STK push payment, that can be easily intergrated to any django powered site.
 
 Quick start
 -----------
 
-1. Add "myblog" to INSTALLED_APPS:
+1. Add "mpesaApp" to INSTALLED_APPS:
 
   INSTALLED_APPS = {
 
@@ -15,7 +15,7 @@ Quick start
 
   }
 
-2. Include the myblog URLconf in urls.py:
+2. Include the mpesaApp URLconf in urls.py:
     path('payment/', include('mpesaApp.urls')),
 
 3. Run `python manage.py migrate` to create DJango mpesa's models.
