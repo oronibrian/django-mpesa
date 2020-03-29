@@ -1,6 +1,6 @@
 from django.urls import path
-from mpesaApp.views import payment
+from mpesaApp.views import PayrollListView
 
 urlpatterns = [
-    path('', payment,name='payment'),
+    path('', PayrollListView.as_view()),
 ]

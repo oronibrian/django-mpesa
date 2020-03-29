@@ -1,0 +1,5 @@
+include LICENSE.md
+include README.rst
+recursive-include DjangoMpesa/static *
+recursive-include DjangoMpesa/templates *
+recursive-include docs *

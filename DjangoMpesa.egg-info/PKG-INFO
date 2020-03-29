@@ -1,0 +1,44 @@
+Metadata-Version: 1.1
+Name: DjangoMpesa
+Version: 0.1
+Summary: A simple Django app for integrating mpesa stk push payment to your django site.
+Home-page: http://www.techtenant.co.ke/
+Author: Oronz
+Author-email: brianoroni6@gmail.com
+License: BSD License
+Description: ============
+        Django mpesa
+        ============
+        
+        Django mpesa is a simple re-usable  of Django's application for mpesa STK push payment, that can be easily intergrated to any django powered site.
+        
+        Quick start
+        -----------
+        
+        1. Add "myblog" to INSTALLED_APPS:
+        
+          INSTALLED_APPS = {
+        
+            'mpesaApp'
+        
+          }
+        
+        2. Include the myblog URLconf in urls.py:
+            path('payment/', include('mpesaApp.urls')),
+        
+        3. Run `python manage.py migrate` to create DJango mpesa's models.
+        
+        4. Run the development server and access http://127.0.0.1:8000/admin/ to
+            manage setup and add all your payment details.
+        
+        5. Access http://127.0.0.1:8000/payment/ to view a json result of payment.
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic ContentTopic :: mpesa :: stk push :: payment

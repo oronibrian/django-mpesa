@@ -1,0 +1,12 @@
+LICENSE.md
+MANIFEST.in
+README.rst
+setup.py
+DjangoMpesa/__init__.py
+DjangoMpesa/settings.py
+DjangoMpesa/urls.py
+DjangoMpesa/wsgi.py
+DjangoMpesa.egg-info/PKG-INFO
+DjangoMpesa.egg-info/SOURCES.txt
+DjangoMpesa.egg-info/dependency_links.txt
+DjangoMpesa.egg-info/top_level.txt

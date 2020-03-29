@@ -18,5 +18,5 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/payment/stk_push', include('mpesaApp.urls')),
+    path('payment/', include('mpesaApp.urls')),
 ]

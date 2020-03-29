@@ -40,7 +40,6 @@ pytz==2018.9
 requests==2.21.0
 urllib3==1.24.1
 
-
 ```
 Add 'rest_framework' and 'mpesaApp' to your INSTALLED_APPS setting.
 
