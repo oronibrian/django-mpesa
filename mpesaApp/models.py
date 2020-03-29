@@ -19,7 +19,8 @@ class mpesaDetail(models.Model):
     CONSUMER_SECRET = models.CharField(max_length=255)
     GENERATE_TOKEN_URL = models.CharField(max_length=255)
 
-
+    def __str__(self):
+        return self.BusinessShortCode
 
 class payment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -30,3 +31,6 @@ class payment(models.Model):
 
     class Meta:
         ordering = ('created',)
+    
+    def __str__(self):
+        return self.title
