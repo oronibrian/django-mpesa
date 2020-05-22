@@ -9,8 +9,8 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name = 'DjangoMpesa',
-    version = '1',
-    packages = ['DjangoMpesa'],
+    version = '1.2',
+    packages = ['mpesaApp'],
     include_package_data = True,
     license = 'BSD License',
     description = 'A simple Django app for integrating mpesa stk push payment to your django site.',
@@ -27,6 +27,8 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.7',
-    ]
+        'Programming Language :: Python :: 3.8',
+    ],
+    python_requires= '>=3.8',
+
 )
