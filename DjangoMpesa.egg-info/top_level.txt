@@ -1,1 +1,1 @@
-DjangoMpesa
+mpesaApp
