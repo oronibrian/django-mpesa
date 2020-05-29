@@ -35,12 +35,13 @@ class PayrollListView(generics.ListCreateAPIView):
 
         amount1 = serializer1.validated_data['amount']
         phone = serializer1.validated_data['phone']
+        title = serializer1.validated_data['title']
 
         data = request.POST.dict()
-        title = str(data.get("amount"))
+        title = str(title)
 
-        price = str(data.get("amount"))
-        number = str("254" + data.get("phone")[1:])
+        price = str(amount1)
+        number = str("254" + phone[1:])
 
         print(amount1, phone)
 
@@ -79,10 +80,62 @@ class PayrollListView(generics.ListCreateAPIView):
 
             response = requests.post(api_url, json=params, headers=headers)
 
-            pprint.pprint(response)
+            CheckoutRequestID = response.json()['CheckoutRequestID']
+
+            pprint.pprint(CheckoutRequestID)
+
 
             print("Params:{0} ".format(params))
 
-        serializer1.save()
+        serializer1.validated_data['CheckoutRequestID']=CheckoutRequestID
+
+        obj = payment.objects.get(title=title)
+        if not obj:
+            serializer1.save()
+            api_url_query = "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query"
+
+            confirm_payment(title,api_url_query,access_token,val.BusinessShortCode,val.Timestamp,val.Password,CheckoutRequestID)
+        else:
+
+            obj.CheckoutRequestID = CheckoutRequestID
+            obj.save()
+            api_url_query = "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query"
+
+            confirm_payment(title,api_url_query,access_token,val.BusinessShortCode,val.Timestamp,val.Password,CheckoutRequestID)
+
+
 
         return Response({'message': 'Payment Processed Successfully'}, status=status.HTTP_200_OK)
+
+
+
+def confirm_payment(title,api_url_query,access_token,BusinessShortCode,Timestamp,Password,CheckoutRequestID):
+
+    api_url = api_url_query
+
+    obj = payment.objects.get(title=title)
+
+
+    headers = {"Authorization": "Bearer %s" % access_token}
+    request = { "BusinessShortCode": BusinessShortCode ,
+          "Password": Password,
+          "Timestamp": Timestamp,
+          "CheckoutRequestID": CheckoutRequestID
+    }
+
+    response = requests.post(api_url, json = request, headers=headers)
+    # code = response.json()['ResultCode']
+    # message = response.json()['ResultDesc']
+    # if code=="0":
+    #     obj.success = True
+    #     obj.payment_status_message=message
+
+    #     obj.save()
+    # else:
+    #     obj.success = False
+    #     obj.payment_status_message=message
+    #     obj.save()
+
+
+    print (response.text)
+    return Response({'message': 'Payment Confirmed Successfully'}, status=status.HTTP_200_OK)

@@ -1,6 +1,7 @@
 
 from rest_framework import serializers
 from mpesaApp.models import mpesaDetail,payment
+from rest_framework.validators import UniqueTogetherValidator
 
 
 
@@ -21,4 +22,7 @@ class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = payment
 
-        fields = ('title', 'amount','phone',)
+        fields = ('title', 'amount','phone','CheckoutRequestID',)
+        read_only_fields=['CheckoutRequestID']
+
+        

@@ -35,12 +35,13 @@ class PayrollListView(generics.ListCreateAPIView):
 
         amount1 = serializer1.validated_data['amount']
         phone = serializer1.validated_data['phone']
+        title = serializer1.validated_data['title']
 
         data = request.POST.dict()
-        title = str(data.get("amount"))
+        title = str(title)
 
-        price = str(data.get("amount"))
-        number = str("254" + data.get("phone")[1:])
+        price = str(amount1)
+        number = str("254" + phone[1:])
 
         print(amount1, phone)
 

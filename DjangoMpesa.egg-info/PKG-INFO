@@ -1,6 +1,6 @@
 Metadata-Version: 1.2
 Name: DjangoMpesa
-Version: 1.3
+Version: 1.4
 Summary: A simple Django app for integrating mpesa stk push payment to your django site.
 Home-page: http://www.techtenant.co.ke/
 Author: Oronz

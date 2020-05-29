@@ -27,10 +27,13 @@ class payment(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
     amount = models.IntegerField()
     phone=models.CharField(max_length=100)
-   
+    CheckoutRequestID=models.CharField(max_length=500,default='')
+    success=models.BooleanField(default=False)
+    payment_status_message=models.CharField(max_length=500,default='')
+
 
     class Meta:
         ordering = ('created',)
-    
+
     def __str__(self):
         return self.title
