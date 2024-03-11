@@ -1,9 +1,9 @@
 asgiref==3.2.7
 certifi==2019.3.9
 chardet==3.0.4
-Django==2.1.7
+Django==3.2.25
 django-cors-headers==3.3.0
-django-filter==2.1.0
+django-filter==2.4.0
 djangorestframework==3.9.2
 idna==2.8
 Markdown==3.0.1
